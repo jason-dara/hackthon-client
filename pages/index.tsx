@@ -33,12 +33,13 @@ export default function Home() {
 
   const handleSubmit = async () => {
     setLoading(true);
-    const { data } = await axios.post('http://localhost:5000/api/v1/sample', {
+    const { data } = await axios.post('https://temp-pooldata.herokuapp.com/api/v1/sample', {
       lng,
       lat,
       alt,
       radius,
     });
+    console.log(data);
     setResult(data);
     setLoading(false);
     setHasMadeRequest(true);
